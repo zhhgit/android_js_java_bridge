@@ -25,17 +25,16 @@ public class MainActivity extends Activity {
         //初始化控件
         webview1 = (WebView) findViewById(R.id.webview1);
         button1 = (Button) findViewById(R.id.button1);
-        //实例化js对象
+        //实例化jsKit对象
         jsKit = new JSKit(this);
-        //设置参数
-        webview1.getSettings().setBuiltInZoomControls(true);
-        //内容的渲染需要webviewChromeClient去实现，设置webviewChromeClient基类，解决js中alert不弹出的问题和其他内容渲染问题
-        webview1.setWebChromeClient(new WebChromeClient());
-        webview1.getSettings().setJavaScriptEnabled(true);
+
         //把jsKit绑定到全局的globalParams上，globalParams的作用域是全局的，初始化后可随处使用
+        webview1.getSettings().setJavaScriptEnabled(true);
         webview1.addJavascriptInterface(jsKit, "globalParams");
         webview1.loadUrl("file:///android_asset/www/test.html");
 
+        //内容的渲染需要webviewChromeClient去实现，设置webviewChromeClient基类，解决js中alert不弹出的问题和其他内容渲染问题
+        webview1.setWebChromeClient(new WebChromeClient());
         //android调用html5中JS方法
         button1.setOnClickListener(new OnClickListener() {
             @Override

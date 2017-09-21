@@ -14,5 +14,6 @@
         android:layout_height="40dip"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="调用html中js方法"/>
+        android:text="android调用html5方法"
+        android:textAllCaps="false"/>
 </RelativeLayout>

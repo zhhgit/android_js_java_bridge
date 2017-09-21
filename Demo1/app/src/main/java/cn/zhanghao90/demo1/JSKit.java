@@ -10,7 +10,7 @@ public class JSKit {
     }
 
     @JavascriptInterface
-    public void showMsg(String msg) {
+    public void html5ToAndroid(String msg) {
         Toast.makeText(ma, msg, Toast.LENGTH_SHORT).show();
     }
 }
